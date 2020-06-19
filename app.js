@@ -78,14 +78,6 @@ app.get("/posts/:postId", function(req, res){
     })
   });
 
-
-  posts.forEach(function(post){
-    const storedTitle = _.lowerCase(post.title);
-
-    if (storedTitle === requestedPostId) {
-    }
-  });
-
 });
 
 // Deployment Code for many PORTS
