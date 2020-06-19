@@ -63,9 +63,11 @@ app.post("/compose", function(req, res){
     content: req.body.postBody
   });
 
-  post.save();
-  res.redirect("/");
-
+  post.save(function(err){
+    if (!err){
+      res.redirect("/");
+    }
+  })
 });
 
 app.get("/posts/:postId", function(req, res){
@@ -77,7 +79,6 @@ app.get("/posts/:postId", function(req, res){
       content: post.content
     })
   });
-
 });
 
 // Deployment Code for many PORTS
